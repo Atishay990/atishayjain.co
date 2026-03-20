@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Envy — Atishay Jain</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.85;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 80px 20px 60px;
+    color: #1a1a1a;
+    background: #fafaf8;
+  }
+
+  /* ---- NAV ---- */
+  .back {
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .back:hover { color: #1a1a1a; }
+
+  /* ---- HERO ---- */
+  .hero {
+    margin: 80px 0 60px;
+    text-align: center;
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    font-style: italic;
+    color: #888;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* ---- CHAPTERS ---- */
+  .chapter {
+    margin-bottom: 48px;
+  }
+
+  .chapter-number {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 6px;
+  }
+
+  .chapter-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e8e8e4;
+  }
+
+  /* ---- PROSE ---- */
+  p {
+    margin-bottom: 20px;
+    color: #2a2a2a;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.9;
+  }
+
+  .drop-cap::first-letter {
+    float: left;
+    font-size: 3.6rem;
+    line-height: 0.75;
+    padding: 0.08em 0.08em 0 0;
+    color: #555;
+    font-weight: 400;
+  }
+
+  em { font-style: italic; }
+  strong { font-weight: 600; }
+
+  .sanskrit {
+    font-style: italic;
+    color: #666;
+  }
+
+  /* ---- SECTION BREAK ---- */
+  .section-break {
+    text-align: center;
+    margin: 40px 0;
+    color: #ccc;
+    font-size: 1.2rem;
+    letter-spacing: 0.6em;
+    user-select: none;
+  }
+
+  /* ---- DIALOGUE BLOCK ---- */
+  .dialogue-block {
+    margin: 28px 0;
+    padding: 20px 20px 20px 24px;
+    border-left: 2px solid #ccc;
+    background: #f5f4f0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .dialogue-block p {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  .dialogue-block p:last-child { margin-bottom: 0; }
+
+  .dialogue-speaker {
+    font-style: normal;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #aaa;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* ---- KEY IDEA ---- */
+  .key-idea {
+    margin: 36px 0;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .key-idea::before,
+  .key-idea::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: #ccc;
+    margin: 0 auto 20px;
+  }
+  .key-idea::after {
+    margin: 20px auto 0;
+  }
+
+  .key-idea p {
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #1a1a1a;
+  }
+
+  /* ---- PHILOSOPHY CARD ---- */
+  .philosophy-card {
+    margin: 32px 0;
+    padding: 28px;
+    background: #1a1a1a;
+    color: #e8e8e4;
+    border-radius: 4px;
+  }
+
+  .philosophy-card h3 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #ccc;
+    margin-bottom: 12px;
+  }
+
+  .philosophy-card p {
+    color: #b0aca6;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* ---- FOOTER ---- */
+  .article-footer {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid #e8e8e4;
+    text-align: center;
+  }
+
+  .article-footer .author-note {
+    font-size: 0.85rem;
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .article-footer .back {
+    font-size: 0.85rem;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 600px) {
+    body { font-size: 16px; padding: 60px 16px 40px; }
+    .hero { margin: 60px 0 40px; }
+    .hero h1 { font-size: 1.8rem; }
+    .dialogue-block { padding: 16px 16px 16px 18px; }
+    .philosophy-card { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back">← back</a>
+
+<!-- ======== HERO ======== -->
+<section class="hero">
+  <div class="hero-label">A Philosophical Exploration</div>
+  <h1>The Envy</h1>
+  <p class="hero-subtitle">On envy, illusion, and the godlike power of choosing who is real</p>
+</section>
+
+<!-- ======== ARTICLE ======== -->
+<article>
+
+  <!-- CHAPTER 1 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter I</div>
+    <h2 class="chapter-title">The Sting That Started Everything</h2>
+
+    <p class="drop-cap lead">A friend of mine got rich. Not mildly comfortable, not doing-well-for-himself rich. Extravagantly, undeniably, posting-from-Santorini rich. And I felt it. That familiar acid in the chest. That quiet voice whispering: <em>that should have been me.</em></p>
+
+    <p>We all know the feeling. You scroll through someone's life and suddenly your own feels smaller. Their house makes your apartment shrink. Their vacation makes your weekend feel like a prison sentence. Their success rewrites your story, not as "a life being lived" but as "a life falling behind."</p>
+
+    <p>But one night, sitting alone with that envy gnawing at me, a strange thought arrived. Not a comforting thought. Not a self-help affirmation. Something stranger. Something that, once I followed it to its end, changed the way I see everything.</p>
+
+    <p>The thought was this:</p>
+
+    <div class="key-idea">
+      <p>What if my friend's wealth doesn't actually exist, except as scenery in my consciousness?</p>
+    </div>
+
+    <p>It sounds insane. I know. Stay with me.</p>
+  </section>
+
+  <div class="section-break">· · ·</div>
+
+  <!-- CHAPTER 2 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter II</div>
+    <h2 class="chapter-title">The Observer's Prison</h2>
+
+    <p>Here is something undeniably true: I have never experienced anything outside my own consciousness. Neither have you.</p>
+
+    <p>Every sunset you've admired, every person you've loved, every meal you've tasted. All of it was processed, interpreted, and experienced entirely within the sealed theatre of your own mind. You have never touched "reality." You've only ever touched your brain's model of reality. You are locked inside your skull, watching a private screening that no one else can verify.</p>
+
+    <p>I am the observer. The only observer I can confirm exists. The sun, the moon, the mountains, the eight billion people reportedly walking this earth. I know them only as images on my screen. I can never step behind someone else's eyes to verify that they see anything at all.</p>
+
+    <div class="dialogue-block">
+      <span class="dialogue-speaker">The Uncomfortable Question</span>
+      <p>If I were to die right now, not the universe, just me, what happens to the world? Not physically. Experientially. For me, the sun goes out. The moon vanishes. Every person I've ever known ceases to exist. My universe doesn't outlive me. It can't. It dies when I do.</p>
+    </div>
+
+    <p>Which means something terrifying: the world began when I opened my eyes, and it will end when I close them for the last time. Not the "objective" world, whatever that is. But the only world I will ever have access to. Mine.</p>
+
+    <p>Philosophers have a name for this. They call it <strong>solipsism</strong>, the position that only one's own mind is sure to exist. Everything else might be illusion, projection, shadow on a cave wall.</p>
+
+    <p>And it turns out, I am far from the first person to think this.</p>
+  </section>
+
+  <div class="section-break">· · ·</div>
+
+  <!-- CHAPTER 3 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter III</div>
+    <h2 class="chapter-title">Ghosts of the Same Thought</h2>
+
+    <p>In the 17th century, René Descartes sat by a fire and dismantled reality piece by piece. He doubted the existence of his body, the room around him, even mathematics. Because what if, he thought, some malicious demon was fabricating all of it? The only thing he couldn't doubt was the doubting itself. <em>Cogito, ergo sum.</em> I think, therefore I am. Everything beyond that thought? Unverifiable.</p>
+
+    <p>But this idea is far older than Europe.</p>
+
+    <p>In the forests of ancient India, the sages of the Upanishads arrived at something more radical. They called the perceived world <span class="sanskrit">Māyā</span>, a cosmic illusion, shimmering and seductive but ultimately without substance. And within this tradition, <strong>Advaita Vedanta</strong>, crystallized by Adi Shankaracharya, proposed the most breathtaking claim in the history of human thought:</p>
+
+    <div class="philosophy-card">
+      <h3>Advaita Vedanta</h3>
+      <p>There is only one consciousness. Brahman. What you call "I" and what you call "the world" are not two separate things. They are the same awareness, dreaming itself into multiplicity. The wave thinks it is separate from the ocean. It is not. Your individual self, Atman, is Brahman wearing a mask. Remove the mask and there is no "you" and "universe." There is only one thing, awake, looking at itself from eight billion angles.</p>
+    </div>
+
+    <p>In China, the Daoist philosopher Zhuangzi dreamed he was a butterfly. Vivid, joyful, completely absorbed. When he woke, he asked: am I a man who just dreamed he was a butterfly, or a butterfly now dreaming it's a man? He never resolved it. That was the point.</p>
+
+    <p>And the Buddha, sitting under a tree not far from where I live, declared that the self, the very "I" that claims to be the observer, is itself an illusion. There is no fixed watcher. What I call "me" is just a river of sensations, thoughts, and reactions, flowing with no one standing on the bank.</p>
+
+    <p>So the question deepens. If the world might be my illusion, what if I am also staged? What if the audience is part of the script? What if there is no player, only the game playing itself?</p>
+  </section>
+
+  <div class="section-break">· · ·</div>
+
+  <!-- CHAPTER 4 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter IV</div>
+    <h2 class="chapter-title">The NPC Revelation</h2>
+
+    <p>Then came the metaphor that made everything click.</p>
+
+    <p>What if the world is a video game, I am the player character, and everyone else is an NPC?</p>
+
+    <p>The moment I framed it this way, the envy evaporated. Think about it. No gamer has ever envied an NPC. Nobody playing a game feels jealous that a scripted character drives a nicer car. The NPC's wealth isn't <em>experienced</em> by anyone. It's set dressing. Texture. Background noise rendered to make the player's world feel full.</p>
+
+    <p>If my rich friend is an NPC, his wealth is just pixels. His luxury apartment is a pre-loaded asset. His Instagram is a cutscene I can skip. None of it changes my health bar, my quest log, my actual experience of being alive.</p>
+
+    <p>And the metaphor goes deeper than you'd think. In a game, NPCs exist only when you're near them. Walk to the other side of the map and they literally de-spawn. They stop being rendered. The game doesn't waste resources drawing what you're not looking at.</p>
+
+    <p>Quantum physics, strangely, says something similar. Particles don't settle into definite states until observed. Reality, at the most fundamental level, might not "render" until consciousness looks at it.</p>
+
+    <div class="key-idea">
+      <p>No one has ever envied an NPC. The envy only exists because I forgot it was a game.</p>
+    </div>
+  </section>
+
+  <div class="section-break">· · ·</div>
+
+  <!-- CHAPTER 5 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter V</div>
+    <h2 class="chapter-title">The Trap Inside the Metaphor</h2>
+
+    <p>But here's where I had to be honest with myself. The NPC metaphor is seductive, and seductive ideas need to be stress-tested.</p>
+
+    <p>If everyone is an NPC, then no one's suffering matters. My mother's pain? NPC animation. A stranger starving? Background event. A friend's heartbreak? Scripted dialogue playing out for atmosphere. Follow this road far enough and you arrive at something ugly. Sociopathy dressed in a philosopher's robe.</p>
+
+    <p>And there's a deeper crack in the logic: <em>how do I know I'm the player character?</em> Every single person alive has the same first-person experience. They're all trapped behind their own eyes. They all feel like the protagonist. My rich friend? From his perspective, <em>I'm</em> the NPC. He's the one observing. He's the one whose universe is real.</p>
+
+    <p>So either everyone is an NPC except me, which is lonely and eventually monstrous, or everyone is an NPC <em>including</em> me, which is the strange, egoless universe the Buddhists describe, or...</p>
+  </section>
+
+  <div class="section-break">· · ·</div>
+
+  <!-- CHAPTER 6 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter VI</div>
+    <h2 class="chapter-title">The Power to Promote</h2>
+
+    <p class="drop-cap">Or I have a power I didn't realize I had.</p>
+
+    <p>What if the truth is not that everyone is permanently NPC or permanently real, but that <em>I choose</em>? What if I have the ability, at any moment, to look at another human being and <strong>elevate them from NPC to Player Character</strong> in my world?</p>
+
+    <p>I've already done it. I did it with my parents. Not because they proved their consciousness to me with a philosophical argument, but because I <em>decided</em> their inner world matters. I did it with my two or three closest friends. I did it with the people I love. I looked at them and made a choice, probably without even realizing it: <em>you are real to me. Your pain is real. Your joy counts. You are not background. You are foreground.</em></p>
+
+    <p>And this choice can be made again. Tomorrow, a stranger could become real to me through one honest conversation. A colleague I've walked past for years could be promoted through one moment of vulnerability. My future spouse will be someone I look at and say, consciously or not, <em>I grant you full existence in my universe.</em></p>
+
+    <div class="philosophy-card">
+      <h3>My Real</h3>
+      <p>I am the observer. My direct experience is the only confirmed reality. But I am not passive. I hold a power that is almost godlike. The power to choose who becomes real. To look at another person and decide: you are not scenery. You are a soul. Love is not a feeling that strikes me. Love is the act of promotion. The deliberate, voluntary decision to treat another consciousness as equal to my own, even though I can never prove it exists.</p>
+    </div>
+
+    <p>This is what I've started calling <strong>My Real</strong>. Two words. That's it. My real is not your real. My real is the universe as I experience it, and the people I've <em>chosen</em> to make real inside it. It's solipsism with a door. And I hold the key.</p>
+  </section>
+
+  <div class="section-break">· · ·</div>
+
+  <!-- CHAPTER 7 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter VII</div>
+    <h2 class="chapter-title">What This Solves</h2>
+
+    <p>Look at what this framework quietly resolves:</p>
+
+    <p><strong>Envy dissolves.</strong> Because NPCs can't threaten your sense of self. Their success is scenery. It has nothing to do with your quest.</p>
+
+    <p><strong>Love gets a mechanism.</strong> It's not random lightning. It's a deliberate act of recognition. You look at someone and say: I choose to believe you are as real as I am.</p>
+
+    <p><strong>Heartbreak makes sense.</strong> You granted someone Player Character status, and they left or betrayed that elevation. Demotion feels like a small death in your world because it <em>is</em> one. A universe just got smaller.</p>
+
+    <p><strong>Grief becomes sacred.</strong> Because a PC going permanently offline is fundamentally different from an NPC de-spawning. You chose to make them real. That makes their absence a wound in the fabric of your reality, not just a sad event.</p>
+
+    <p><strong>Growth has a direction.</strong> The richness of your life is not measured by money, fame, or status. It's measured by how many people you've promoted. How many souls you've chosen to make real. Your cast of characters is a living roster that you curate across a lifetime.</p>
+  </section>
+
+  <div class="section-break">· · ·</div>
+
+  <!-- CHAPTER 8 -->
+  <section class="chapter">
+    <div class="chapter-number">Chapter VIII</div>
+    <h2 class="chapter-title">The Final Inversion</h2>
+
+    <p class="drop-cap">And here is the thought that still keeps me up at night.</p>
+
+    <p>If I have this power, the power to promote someone from NPC to Player Character, then everyone else has it too. Which means I exist as a real character in someone else's universe <em>only because they chose to make me real.</em></p>
+
+    <p>My mother did it the moment I was born. My closest friends did it at some point, quietly, without announcement. Somewhere in the world, a small number of people have looked at me, at <em>this</em> specific, flawed, ordinary version of me, and decided: you matter. You are not background noise. You are real.</p>
+
+    <p>I did nothing to earn that. I can do everything to be worthy of it.</p>
+
+    <div class="key-idea">
+      <p>The most important thing you can do when someone elevates you from NPC to Player Character is be worthy of the promotion.</p>
+    </div>
+
+    <p>And maybe that's the whole spiritual journey, really. You start at "only I exist", the loneliest sentence in any language. And slowly, one person at a time, one act of recognition at a time, you let others in. Your single-player game becomes multiplayer. Your universe, which began as a dark room with one observer, fills with light. Not because the light was always there, but because you chose to see it.</p>
+
+    <p>The world is not populated with eight billion real people. It can't be. Your brain doesn't have the bandwidth. But it is populated with the people you've <em>chosen</em> to make real. And every time you make that choice, every time you look at a stranger and think, for the first time, <em>you might be as infinite as I am</em>, your universe gets a little larger.</p>
+
+    <p>A little less lonely.</p>
+
+    <p>A little more worth the rendering.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="article-footer">
+    <p class="author-note">Written in the quiet hours, when the NPCs were asleep and only the player characters were awake.</p>
+    <a href="index.html" class="back">← back to all writings</a>
+  </footer>
+
+</article>
+
+</body>
+</html>

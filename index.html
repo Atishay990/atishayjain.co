@@ -3,36 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atishay Jain | Thoughts</title>
+    <title>Atishay Jain</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
-        font-family: sans-serif;
-        line-height: 1.6;
-        max-width: 650px;
-        margin: 40px auto;
-        padding: 0 10px;
-        color: #333;
+        font-family: "Georgia", "Times New Roman", serif;
+        line-height: 1.8;
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 80px 20px 60px;
+        color: #1a1a1a;
+        background: #fafaf8;
       }
-      h1 {
-        border-bottom: 2px solid #eee;
-        padding-bottom: 10px;
+
+      header {
+        margin-bottom: 80px;
       }
-      article {
-        margin-bottom: 40px;
+
+      header h1 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        margin-bottom: 12px;
       }
-      time {
-        font-size: 0.8em;
+
+      header p {
+        font-size: 0.95rem;
+        color: #666;
+        font-style: italic;
+      }
+
+      .divider {
+        width: 40px;
+        height: 1px;
+        background: #ccc;
+        margin: 40px 0;
+      }
+
+      h2 {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 24px;
+      }
+
+      .writings {
+        list-style: none;
+        margin-bottom: 80px;
+      }
+
+      .writings li {
+        margin-bottom: 20px;
+      }
+
+      .writings a {
+        font-size: 1.1rem;
+        color: #1a1a1a;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+
+      .writings a:hover {
+        border-bottom-color: #1a1a1a;
+      }
+
+      .writings .date {
+        display: block;
+        font-size: 0.8rem;
+        color: #aaa;
+        margin-top: 2px;
+      }
+
+      footer {
+        margin-top: 100px;
+        padding-top: 40px;
+        border-top: 1px solid #e8e8e4;
+      }
+
+      footer p {
+        font-size: 0.85rem;
         color: #888;
+        line-height: 1.7;
       }
     </style>
   </head>
   <body>
-    <h1>Atishay Jain</h1>
+    <header>
+      <h1>Atishay Jain</h1>
+      <p>Musings on reality, consciousness, and the nature of things.</p>
+    </header>
 
-    <article>
-      <time>December 17, 2025</time>
-      <h2>The First Entry</h2>
-      <p>Lets discover the fucking matrix</p>
-    </article>
+    <h2>Writings</h2>
+
+    <ul class="writings">
+      <li>
+        <a href="blog1.html">The Envy</a>
+        <span class="date">December 2025</span>
+      </li>
+    </ul>
+
+    <footer>
+      <p>
+        Atishay Jain — AI entrepreneur by day, philosopher by accident.<br />
+        Building machines that think while questioning what thinking even is.
+      </p>
+      <p style="margin-top: 16px; font-style: italic;">Just Observing.</p>
+    </footer>
   </body>
 </html>
